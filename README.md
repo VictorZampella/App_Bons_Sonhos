@@ -1,3 +1,10 @@
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/3be8c8e4-fcef-42f9-80ba-8e89c905a466" width="250" >
+  <p><strong></strong></p>
+</div>
+
+
+
 # 🌙 TinyDreamer
 
 **O TinyDreamer ** é o companheiro perfeito para embalar os sonhos do seu bebê. Com sons suaves e reconfortantes, criados especialmente para acalmar e relaxar, o aplicativo é uma solução simples e carinhosa para noites tranquilas e momentos de paz.
