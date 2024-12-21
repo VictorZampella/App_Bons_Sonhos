@@ -69,14 +69,14 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Inicio() // Chama diretamente a tela inicial
+            Inicio() 
         }
     }
 }
 
 @Composable
 fun Inicio() {
-    val navController = rememberNavController() // Lembra o controlador de navegação
+    val navController = rememberNavController() 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         content = { innerPadding ->
@@ -172,14 +172,13 @@ fun StoryApp(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(start = 34.dp) // Margem lateral para alinhar à esquerda
+                .padding(start = 34.dp) 
         ) {
-            Spacer(modifier = Modifier.height(95.dp)) // Ajuste a altura para descer a imagem
-
-            // Row para organizar imagem e texto lado a lado
+            Spacer(modifier = Modifier.height(95.dp)) 
+            
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically // Alinha o texto com a imagem
+                verticalAlignment = Alignment.CenterVertically 
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.logo_aplicativo),
@@ -187,7 +186,7 @@ fun StoryApp(
                     modifier = Modifier.size(width = 80.dp, height = 80.dp)
                 )
 
-                Spacer(modifier = Modifier.width(16.dp)) // Espaço entre a imagem e o texto
+                Spacer(modifier = Modifier.width(16.dp)) 
 
                 Text(
                     text = "TinyDreamer",
@@ -201,7 +200,6 @@ fun StoryApp(
             }
         }
 
-        // Coluna centralizada
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
@@ -209,7 +207,6 @@ fun StoryApp(
         ) {
             Spacer(modifier = Modifier.padding(top = 60.dp))
 
-            // Coloca o Card dentro de um Box com a borda
             Box(
                 modifier = Modifier
                     .padding(horizontal = 16.dp)
@@ -217,11 +214,11 @@ fun StoryApp(
                     .border(
                         BorderStroke(2.dp, color = roxo_confort),
                         shape = RoundedCornerShape(16.dp)
-                    ) // Borda com cantos arredondados
+                    ) 
             ) {
                 Card(
                     modifier = Modifier.fillMaxWidth(),
-                    shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp), // Borda arredondada do card
+                    shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp), 
                     colors = androidx.compose.material3.CardDefaults.cardColors(
                         containerColor = rose_confort // Cor de fundo do card
                     ),
@@ -235,7 +232,7 @@ fun StoryApp(
                                 "Toque em Avançar e comece essa jornada de paz e carinho.",
                         fontSize = 22.sp,
                         fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.padding(16.dp), // Padding interno no texto
+                        modifier = Modifier.padding(16.dp), 
                         color = azul_escuro,
                         fontFamily = FontFamily.SansSerif
                     )
@@ -244,7 +241,7 @@ fun StoryApp(
 
 
 
-            Spacer(modifier = Modifier.height(24.dp)) // Espaço entre o card e o botão
+            Spacer(modifier = Modifier.height(24.dp)) 
 
             Button(
                 onClick = {
@@ -322,14 +319,14 @@ fun Musicas_Opcoes(
         ) {
             Box(
                 modifier = Modifier
-                    .fillMaxWidth(0.8f) // Largura do Box (80% da tela)
-                    .padding(16.dp) // Espaço em volta do Box
+                    .fillMaxWidth(0.8f) 
+                    .padding(16.dp) 
                     .border(
                         BorderStroke(2.dp, color = roxo_confort),
                         shape = RoundedCornerShape(16.dp)
                     ) // Borda preta com cantos arredondados
             ) {
-                // Card para opções de músicas
+                // Card para músicas
                 Card(
                     modifier = Modifier.fillMaxWidth(),
                     elevation = CardDefaults.cardElevation(8.dp), // Sombra do card
@@ -354,7 +351,7 @@ fun Musicas_Opcoes(
                                 contentColor = azul_confort
                             ),
                             modifier = Modifier
-                                .fillMaxWidth() // Botão ocupa a largura total do Card
+                                .fillMaxWidth() 
                                 .padding(vertical = 8.dp)
                         ) {
                             Text(
@@ -426,10 +423,10 @@ fun First_Music(
             context,
             R.raw.som_chuva
         )
-    } // Substitua 'som_chuva' pelo nome do arquivo
+    } 
     var isPlaying by remember { mutableStateOf(false) }
 
-    // Liberar recursos do MediaPlayer ao final
+    
     DisposableEffect(Unit) {
         onDispose {
             mediaPlayer.release()
@@ -447,14 +444,14 @@ fun First_Music(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(start = 34.dp) // Margem lateral para alinhar à esquerda
+                .padding(start = 34.dp) 
         ) {
-            Spacer(modifier = Modifier.height(95.dp)) // Ajuste a altura para descer a imagem
+            Spacer(modifier = Modifier.height(95.dp)) 
 
-            // Row para organizar imagem e texto lado a lado
+            
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically // Alinha o texto com a imagem
+                verticalAlignment = Alignment.CenterVertically 
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.logo_aplicativo),
@@ -462,7 +459,7 @@ fun First_Music(
                     modifier = Modifier.size(width = 80.dp, height = 80.dp)
                 )
 
-                Spacer(modifier = Modifier.width(16.dp)) // Espaço entre a imagem e o texto
+                Spacer(modifier = Modifier.width(16.dp)) 
 
                 Text(
                     text = "TinyDreamer",
@@ -476,7 +473,6 @@ fun First_Music(
             }
         }
 
-        // Coluna centralizada
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
@@ -484,10 +480,9 @@ fun First_Music(
         ) {
             Spacer(modifier = Modifier.padding(top = 60.dp))
 
-            // Card ajustado com largura aumentada
             Card(
                 modifier = Modifier
-                    .fillMaxWidth(0.9f) // Aumenta a largura para 90% da tela
+                    .fillMaxWidth(0.9f) 
                     .padding(horizontal = 16.dp)
                     .padding(bottom = 16.dp)
                     .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
@@ -495,9 +490,9 @@ fun First_Music(
             ) {
                 Box(
                     modifier = Modifier
-                        .background(rose_confort) // Cor de fundo do Card
-                        .fillMaxWidth() // Preenche o tamanho do Card
-                        .padding(16.dp) // Padding interno do Card
+                        .background(rose_confort) 
+                        .fillMaxWidth() 
+                        .padding(16.dp) 
                 ) {
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally
@@ -526,7 +521,6 @@ fun First_Music(
                 }
             }
 
-            // Player de música dentro do Box
             Box(
                 modifier = Modifier
                     .padding(16.dp)
@@ -603,7 +597,7 @@ fun First_Music(
                 }
             }
 
-            Spacer(modifier = Modifier.height(24.dp)) // Espaço entre o player e outros componentes
+            Spacer(modifier = Modifier.height(24.dp)) 
         }
     }
 }
@@ -619,11 +613,11 @@ fun Second_Music(
         MediaPlayer.create(
             context,
             R.raw.somcoracao_1
-        ) // Substitua 'som_chuva' pelo nome do arquivo
+        ) 
     }
     var isPlaying by remember { mutableStateOf(false) }
 
-    // Liberar recursos do MediaPlayer ao final
+   
     DisposableEffect(Unit) {
         onDispose {
             mediaPlayer.release()
@@ -641,14 +635,14 @@ fun Second_Music(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(start = 34.dp) // Margem lateral para alinhar à esquerda
+                .padding(start = 34.dp) 
         ) {
-            Spacer(modifier = Modifier.height(95.dp)) // Ajuste a altura para descer a imagem
+            Spacer(modifier = Modifier.height(95.dp)) 
 
-            // Row para organizar imagem e texto lado a lado
+          
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically // Alinha o texto com a imagem
+                verticalAlignment = Alignment.CenterVertically 
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.logo_aplicativo),
@@ -656,7 +650,7 @@ fun Second_Music(
                     modifier = Modifier.size(width = 80.dp, height = 80.dp)
                 )
 
-                Spacer(modifier = Modifier.width(16.dp)) // Espaço entre a imagem e o texto
+                Spacer(modifier = Modifier.width(16.dp)) 
                 Text(
                     text = "TinyDreamer",
                     style = TextStyle(
@@ -669,7 +663,6 @@ fun Second_Music(
             }
         }
 
-        // Coluna centralizada
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
@@ -677,10 +670,9 @@ fun Second_Music(
         ) {
             Spacer(modifier = Modifier.padding(top = 60.dp))
 
-            // Card ajustado com largura aumentada
             Card(
                 modifier = Modifier
-                    .fillMaxWidth(0.9f) // Aumenta a largura para 90% da tela
+                    .fillMaxWidth(0.9f) 
                     .padding(horizontal = 16.dp)
                     .padding(bottom = 16.dp)
                     .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
@@ -688,9 +680,9 @@ fun Second_Music(
             ) {
                 Box(
                     modifier = Modifier
-                        .background(rose_confort) // Cor de fundo do Card
-                        .fillMaxWidth() // Preenche o tamanho do Card
-                        .padding(16.dp) // Padding interno do Card
+                        .background(rose_confort) 
+                        .fillMaxWidth() 
+                        .padding(16.dp) 
                 ) {
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally
@@ -719,7 +711,6 @@ fun Second_Music(
                 }
             }
 
-            // Player de música dentro do Box
             Box(
                 modifier = Modifier
                     .padding(16.dp)
@@ -796,7 +787,7 @@ fun Second_Music(
                 }
             }
 
-            Spacer(modifier = Modifier.height(24.dp)) // Espaço entre o player e outros componentes
+            Spacer(modifier = Modifier.height(24.dp)) 
         }
     }
 }
@@ -817,7 +808,6 @@ fun Third_Music(
     }
     var isPlaying by remember { mutableStateOf(false) }
 
-    // Liberar recursos do MediaPlayer ao final
     DisposableEffect(Unit) {
         onDispose {
             mediaPlayer.release()
@@ -835,14 +825,14 @@ fun Third_Music(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(start = 34.dp) // Margem lateral para alinhar à esquerda
+                .padding(start = 34.dp)
         ) {
-            Spacer(modifier = Modifier.height(95.dp)) // Ajuste a altura para descer a imagem
+            Spacer(modifier = Modifier.height(95.dp))
 
-            // Row para organizar imagem e texto lado a lado
+           
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically // Alinha o texto com a imagem
+                verticalAlignment = Alignment.CenterVertically 
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.logo_aplicativo),
@@ -850,7 +840,7 @@ fun Third_Music(
                     modifier = Modifier.size(width = 80.dp, height = 80.dp)
                 )
 
-                Spacer(modifier = Modifier.width(16.dp)) // Espaço entre a imagem e o texto
+                Spacer(modifier = Modifier.width(16.dp)) 
                 Text(
                     text = "TinyDreamer",
                     style = TextStyle(
@@ -863,7 +853,6 @@ fun Third_Music(
             }
         }
 
-        // Coluna centralizada
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
@@ -871,10 +860,9 @@ fun Third_Music(
         ) {
             Spacer(modifier = Modifier.padding(top = 60.dp))
 
-            // Card ajustado com largura aumentada
             Card(
                 modifier = Modifier
-                    .fillMaxWidth(0.9f) // Aumenta a largura para 90% da tela
+                    .fillMaxWidth(0.9f)
                     .padding(horizontal = 16.dp)
                     .padding(bottom = 16.dp)
                     .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
@@ -882,9 +870,9 @@ fun Third_Music(
             ) {
                 Box(
                     modifier = Modifier
-                        .background(rose_confort) // Cor de fundo do Card
-                        .fillMaxWidth() // Preenche o tamanho do Card
-                        .padding(16.dp) // Padding interno do Card
+                        .background(rose_confort)
+                        .fillMaxWidth() 
+                        .padding(16.dp) 
                 ) {
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally
@@ -913,7 +901,6 @@ fun Third_Music(
                 }
             }
 
-            // Player de som dentro do Box
             Box(
                 modifier = Modifier
                     .padding(16.dp)
@@ -990,7 +977,7 @@ fun Third_Music(
                 }
             }
 
-            Spacer(modifier = Modifier.height(24.dp)) // Espaço entre o player e outros componentes
+            Spacer(modifier = Modifier.height(24.dp)) 
         }
     }
 }
